@@ -1,5 +1,21 @@
 # Testcli
 
+This project demonstrates a workaround for [Angular CLI issue #9729](https://github.com/angular/angular-cli/issues/9729).
+
+The relevant code is in `.vscode/launch.json`, in particular:
+
+    "webRoot": "${workspaceFolder}",
+    "sourceMapPathOverrides": {
+      "webpack:/*": "${webRoot}/*"
+    }
+
+In Visual Studio Code,
+
+- `Ctrl + Shift + B` (or Tasks > Run Build Task...)
+- Set a breakpoint in `src/app/app.component.ts:9`
+- Hit `F5` (or Debug > Start Debugging)
+- Refresh the page and the breakpoint should be hit
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.0.
 
 ## Development server
